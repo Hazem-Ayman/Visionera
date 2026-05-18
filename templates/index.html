@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cartoon Eyes Studio - Landing Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                            "on-tertiary-container": "#4c3f00",
+                            "on-tertiary": "#ffffff",
+                            "error-container": "#ffdad6",
+                            "on-primary-fixed-variant": "#0038b6",
+                            "primary": "#003ec7",
+                            "surface-container-highest": "#e5e2e1",
+                            "surface-dim": "#dcd9d9",
+                            "on-secondary-container": "#60656e",
+                            "primary-fixed": "#dde1ff",
+                            "surface-variant": "#e5e2e1",
+                            "on-secondary": "#ffffff",
+                            "surface": "#fcf9f8",
+                            "error": "#ba1a1a",
+                            "primary-container": "#0052ff",
+                            "on-background": "#1c1b1b",
+                            "primary-fixed-dim": "#b7c4ff",
+                            "inverse-surface": "#313030",
+                            "on-secondary-fixed": "#171c23",
+                            "outline-variant": "#c3c5d9",
+                            "on-tertiary-fixed-variant": "#544600",
+                            "on-primary": "#ffffff",
+                            "tertiary-fixed": "#ffe170",
+                            "tertiary-container": "#caa900",
+                            "secondary": "#5a5f68",
+                            "outline": "#737688",
+                            "inverse-primary": "#b7c4ff",
+                            "on-error-container": "#93000a",
+                            "secondary-container": "#dee2ed",
+                            "inverse-on-surface": "#f3f0ef",
+                            "on-secondary-fixed-variant": "#424750",
+                            "on-primary-container": "#dfe3ff",
+                            "surface-bright": "#fcf9f8",
+                            "tertiary": "#705d00",
+                            "secondary-fixed-dim": "#c2c6d1",
+                            "surface-container": "#f0edec",
+                            "on-surface": "#1c1b1b",
+                            "surface-tint": "#004ced",
+                            "surface-container-low": "#f6f3f2",
+                            "surface-container-lowest": "#ffffff",
+                            "on-error": "#ffffff",
+                            "on-tertiary-fixed": "#221b00",
+                            "secondary-fixed": "#dee2ed",
+                            "surface-container-high": "#ebe7e7",
+                            "tertiary-fixed-dim": "#e9c400",
+                            "background": "#fcf9f8",
+                            "on-primary-fixed": "#001452",
+                            "on-surface-variant": "#434656"
+                    },
+                    "borderRadius": {
+                            "DEFAULT": "0.25rem",
+                            "lg": "0.5rem",
+                            "xl": "0.75rem",
+                            "full": "9999px"
+                    },
+                    "spacing": {
+                            "container-max": "1200px",
+                            "margin-desktop": "64px",
+                            "unit": "8px",
+                            "gutter": "24px",
+                            "stack-md": "24px",
+                            "stack-sm": "8px",
+                            "stack-lg": "48px",
+                            "margin-mobile": "20px"
+                    },
+                    "fontFamily": {
+                            "body-lg": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "body-md": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "display-lg": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "headline-lg-mobile": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "headline-lg": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "headline-md": [
+                                    "Plus Jakarta Sans"
+                            ],
+                            "label-bold": [
+                                    "Plus Jakarta Sans"
+                            ]
+                    },
+                    "fontSize": {
+                            "body-lg": [
+                                    "20px",
+                                    {
+                                            "lineHeight": "32px",
+                                            "fontWeight": "400"
+                                    }
+                            ],
+                            "body-md": [
+                                    "16px",
+                                    {
+                                            "lineHeight": "24px",
+                                            "fontWeight": "500"
+                                    }
+                            ],
+                            "display-lg": [
+                                    "72px",
+                                    {
+                                            "lineHeight": "80px",
+                                            "letterSpacing": "-0.02em",
+                                            "fontWeight": "800"
+                                    }
+                            ],
+                            "headline-lg-mobile": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "headline-lg": [
+                                    "48px",
+                                    {
+                                            "lineHeight": "56px",
+                                            "letterSpacing": "-0.01em",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "headline-md": [
+                                    "32px",
+                                    {
+                                            "lineHeight": "40px",
+                                            "fontWeight": "700"
+                                    }
+                            ],
+                            "label-bold": [
+                                    "14px",
+                                    {
+                                            "lineHeight": "20px",
+                                            "fontWeight": "700"
+                                    }
+                            ]
+                    }
+            },
+                },
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+        }
+        /* Soft Brutalism Button Hover */
+        .btn-brutal {
+            border: 4px solid theme('colors.on-surface');
+            transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
+        }
+        .btn-brutal:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 8px 8px 0px theme('colors.on-surface');
+        }
+        
+        @keyframes float-margin {
+            0%, 100% { margin-top: 0px; }
+            50% { margin-top: -30px; }
+        }
+        .float-1 { animation: float-margin 6s ease-in-out infinite; }
+        .float-2 { animation: float-margin 8s ease-in-out infinite 2s; }
+        .float-3 { animation: float-margin 7s ease-in-out infinite 1s; }
+        .float-4 { animation: float-margin 9s ease-in-out infinite 3s; }
+
+        /* ── Modal overlay ─────────────────────────────── */
+        #upload-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+        }
+        #upload-modal.open { display: flex; }
+        #upload-modal .modal-box {
+            background: #fff;
+            border: 4px solid #1c1b1b;
+            border-radius: 1.5rem;
+            box-shadow: 12px 12px 0px #1c1b1b;
+            padding: 2rem 2.5rem;
+            max-width: 420px;
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            animation: pop-in 0.2s ease;
+        }
+        @keyframes pop-in {
+            from { transform: scale(0.85); opacity: 0; }
+            to   { transform: scale(1);    opacity: 1; }
+        }
+        .modal-mode-btn {
+            padding: 0.75rem 1.5rem;
+            border: 3px solid #1c1b1b;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: transform 0.1s, box-shadow 0.1s;
+            box-shadow: 4px 4px 0 #1c1b1b;
+        }
+        .modal-mode-btn:hover {
+            transform: translate(-3px,-3px);
+            box-shadow: 7px 7px 0 #1c1b1b;
+        }
+        .modal-mode-btn.detect  { background:#003ec7; color:#fff; }
+        .modal-mode-btn.identify{ background:#e9c400; color:#221b00; }
+        
+        /* ── Photo result panel ─────────────────────────── */
+        #photo-result {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0,0,0,0.7);
+            align-items: center;
+            justify-content: center;
+        }
+        #photo-result.open { display: flex; }
+        #photo-result .result-box {
+            background: #fff;
+            border: 4px solid #1c1b1b;
+            border-radius: 1.5rem;
+            box-shadow: 12px 12px 0px #1c1b1b;
+            padding: 1.5rem;
+            max-width: 700px;
+            width: 94%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            animation: pop-in 0.2s ease;
+        }
+        #photo-result img {
+            max-width: 100%;
+            border-radius: 0.75rem;
+            border: 3px solid #1c1b1b;
+        }
+
+        /* ── Video result panel ─────────────────────────── */
+        #video-result {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(0,0,0,0.7);
+            align-items: center;
+            justify-content: center;
+        }
+        #video-result.open { display: flex; }
+        #video-result .result-box {
+            background: #fff;
+            border: 4px solid #1c1b1b;
+            border-radius: 1.5rem;
+            box-shadow: 12px 12px 0px #1c1b1b;
+            padding: 1.5rem;
+            max-width: 780px;
+            width: 94%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            animation: pop-in 0.2s ease;
+        }
+        #video-result img {
+            max-width: 100%;
+            border-radius: 0.75rem;
+            border: 3px solid #1c1b1b;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-body-md text-body-md text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-background dark:bg-on-background text-primary dark:text-primary-fixed border-b-4 border-on-surface w-full sticky top-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-display-lg text-headline-lg text-on-surface dark:text-surface-container-lowest flex justify-center w-full">
+    <!-- Interactive Eyes Component -->
+    <div class="eyes-container relative inline-flex gap-2 cursor-pointer" onclick="document.querySelector('h1').innerText = 'Peekaboo!'">
+        <div class="eye relative w-12 h-12 bg-white rounded-full border-4 border-on-surface flex items-center justify-center shadow-sm">
+            <div class="pupil absolute w-5 h-5 bg-on-surface rounded-full"></div>
+        </div>
+        <div class="eye relative w-12 h-12 bg-white rounded-full border-4 border-on-surface flex items-center justify-center shadow-sm">
+            <div class="pupil absolute w-5 h-5 bg-on-surface rounded-full"></div>
+        </div>
+    </div>
+</div>
+<button class="hover:translate-x-[-2px] hover:translate-y-[-2px] transition-transform active:translate-x-0 active:translate-y-0 duration-100 hidden">
+<span class="material-symbols-outlined text-secondary dark:text-secondary-fixed">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow flex flex-col items-center justify-center relative px-margin-mobile md:px-margin-desktop py-12 overflow-hidden">
+    <div class="flex flex-col xl:flex-row items-center justify-between w-full max-w-[1400px] gap-8 relative z-10">
+        <!-- Desktop Face Detection Button -->
+        <button onclick="setMode('detection')" class="hidden xl:flex flex-col items-center justify-center w-[300px] h-[300px] rounded-full border-4 border-on-surface bg-primary text-on-primary font-headline-md text-headline-md shadow-[12px_12px_0px_theme('colors.on-surface')] hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[16px_16px_0px_theme('colors.on-surface')] transition-all duration-300">
+            <span class="material-symbols-outlined text-[48px] mb-2">face</span>Face Detection
+        </button>
+        
+        <div class="flex flex-col items-center justify-center gap-stack-lg z-10 w-full max-w-2xl text-center">
+            <!-- Feed Circle -->
+            <div id="video_container" class="relative w-[320px] h-[320px] md:w-[450px] md:h-[450px] rounded-full border-4 border-on-surface overflow-hidden bg-surface-container shadow-[12px_12px_0px_theme('colors.on-surface')] transition-transform hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[16px_16px_0px_theme('colors.on-surface')] duration-300 cursor-pointer" onclick="setMode('raw')" title="Click to clear feed magic">
+                <img id="video_feed_img" src="{{ url_for('video_feed') }}" class="w-full h-full object-cover" alt="Video Feed" />
+            </div>
+            
+            <div class="flex flex-col gap-stack-sm mt-8 items-center">
+                <h1 id="hello-heading" class="font-display-lg text-display-lg md:text-[100px] text-on-surface leading-none tracking-tight font-extrabold">Hello.</h1>
+                <!-- Utility Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mt-6">
+                    <button onclick="toggleFullscreen()" class="px-6 py-3 border-2 border-on-surface shadow-[4px_4px_0px_theme('colors.on-surface')] rounded-full bg-tertiary text-on-tertiary font-label-bold hover:-translate-y-1 hover:shadow-[6px_6px_0px_theme('colors.on-surface')] transition-all">
+                        🔍 Full Screen
+                    </button>
+                    <button onclick="resetFeed()" class="px-6 py-3 border-2 border-on-surface shadow-[4px_4px_0px_theme('colors.on-surface')] rounded-full bg-error-container text-error font-label-bold hover:-translate-y-1 hover:shadow-[6px_6px_0px_theme('colors.on-surface')] transition-all">
+                        🛑 Make Normal
+                    </button>
+                </div>
+                <!-- Upload Buttons -->
+                <div class="flex flex-wrap justify-center gap-4 mt-3">
+                    <button id="btn-upload-photo" onclick="startPhotoUpload()" class="px-6 py-3 border-2 border-on-surface shadow-[4px_4px_0px_theme('colors.on-surface')] rounded-full bg-primary-fixed text-on-primary-fixed font-label-bold hover:-translate-y-1 hover:shadow-[6px_6px_0px_theme('colors.on-surface')] transition-all">
+                        🖼️ Process Photo
+                    </button>
+                    <button id="btn-upload-video" onclick="startVideoUpload()" class="px-6 py-3 border-2 border-on-surface shadow-[4px_4px_0px_theme('colors.on-surface')] rounded-full bg-secondary-container text-on-secondary-container font-label-bold hover:-translate-y-1 hover:shadow-[6px_6px_0px_theme('colors.on-surface')] transition-all">
+                        🎬 Process Video
+                    </button>
+                    <button id="btn-add-person" onclick="openAddPersonModal()" class="px-6 py-3 border-2 border-on-surface shadow-[4px_4px_0px_theme('colors.on-surface')] rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-bold hover:-translate-y-1 hover:shadow-[6px_6px_0px_theme('colors.on-surface')] transition-all">
+                        ➕ Add Person
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flex xl:hidden gap-6 mt-stack-md">
+                <!-- Mobile Face Detection Button -->
+                <button onclick="setMode('detection')" class="btn-brutal bg-primary text-on-primary font-label-bold text-label-bold w-[120px] h-[120px] rounded-full flex flex-col items-center justify-center shadow-[6px_6px_0px_theme('colors.on-surface')]">
+                    <span class="material-symbols-outlined text-[32px]">face</span>Detect
+                </button>
+                <!-- Mobile Face Identification Button -->
+                <button onclick="setMode('identification')" class="btn-brutal bg-tertiary-fixed text-on-tertiary-fixed font-label-bold text-label-bold w-[120px] h-[120px] rounded-full flex flex-col items-center justify-center shadow-[6px_6px_0px_theme('colors.on-surface')]">
+                    <span class="material-symbols-outlined text-[32px]">fingerprint</span>Identify
+                </button>
+            </div>
+        </div>
+        
+        <!-- Desktop Face Identification Button -->
+        <button onclick="setMode('identification')" class="hidden xl:flex flex-col items-center justify-center w-[300px] h-[300px] rounded-full border-4 border-on-surface bg-tertiary-fixed text-on-tertiary-fixed font-headline-md text-headline-md shadow-[12px_12px_0px_theme('colors.on-surface')] hover:-translate-y-2 hover:-translate-x-2 hover:shadow-[16px_16px_0px_theme('colors.on-surface')] transition-all duration-300">
+            <span class="material-symbols-outlined text-[48px] mb-2">fingerprint</span>Face Identifier
+        </button>
+    </div>
+    <!-- Floating Background Shapes -->
+    <div class="absolute top-[10%] left-[5%] w-16 h-16 rounded-full border-4 border-on-surface bg-primary shadow-[6px_6px_0px_theme('colors.on-surface')] opacity-70 float-1"></div>
+    <div class="absolute top-[15%] right-[8%] w-24 h-12 rounded-lg border-4 border-on-surface bg-tertiary shadow-[6px_6px_0px_theme('colors.on-surface')] rotate-[15deg] opacity-70 float-2"></div>
+    <div class="absolute bottom-[20%] left-[12%] w-32 h-12 rounded-full border-4 border-on-surface bg-secondary shadow-[6px_6px_0px_theme('colors.on-surface')] rotate-[-12deg] opacity-70 float-3"></div>
+    <div class="absolute top-[60%] right-[10%] w-20 h-20 border-4 border-on-surface bg-error-container shadow-[8px_8px_0px_theme('colors.on-surface')] rotate-[20deg] opacity-70 float-4"></div>
+    <div class="absolute top-[40%] left-[2%] w-12 h-32 rounded-full border-4 border-on-surface bg-primary-fixed shadow-[6px_6px_0px_theme('colors.on-surface')] -rotate-45 opacity-60 float-1"></div>
+    <div class="absolute bottom-[10%] right-[25%] w-24 h-24 rounded-full border-4 border-on-surface bg-on-tertiary-fixed-variant shadow-[6px_6px_0px_theme('colors.on-surface')] opacity-50 float-2"></div>
+</main>
+
+<!-- ── Mode-picker modal ─────────────────────────────────────── -->
+<div id="upload-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+        <h2 id="modal-title" class="text-xl font-bold text-on-surface">Choose Processing Mode</h2>
+        <p id="modal-subtitle" class="text-sm text-secondary">What should be applied to your file?</p>
+        <button id="modal-detect-btn" class="modal-mode-btn detect" onclick="confirmUpload('detection')">
+            🔍 Face Detection
+        </button>
+        <button id="modal-identify-btn" class="modal-mode-btn identify" onclick="confirmUpload('identification')">
+            🪪 Face Identification
+        </button>
+        <button onclick="closeUploadModal()" class="text-sm text-secondary underline mt-1 self-center cursor-pointer">Cancel</button>
+    </div>
+</div>
+
+<!-- ── Add Person modal ──────────────────────────────────────── -->
+<div id="add-person-modal" role="dialog" aria-modal="true" style="display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); align-items: center; justify-content: center;">
+    <div class="modal-box" style="background: #fff; border: 4px solid #1c1b1b; border-radius: 1.5rem; box-shadow: 12px 12px 0px #1c1b1b; padding: 2rem 2.5rem; max-width: 420px; width: 90%; display: flex; flex-direction: column; gap: 1rem;">
+        <h2 class="text-xl font-bold text-on-surface">Add New Person</h2>
+        <p class="text-sm text-secondary">Upload photos to train the system to recognise a new person.</p>
+        
+        <form id="add-person-form" onsubmit="submitAddPerson(event)" class="flex flex-col gap-4">
+            <div>
+                <label for="person-name" class="block text-sm font-bold text-on-surface mb-1">Name</label>
+                <input type="text" id="person-name" required class="w-full border-2 border-on-surface rounded-lg p-2 focus:ring-2 focus:ring-primary outline-none" />
+            </div>
+            
+            <div>
+                <label for="person-photos" class="block text-sm font-bold text-on-surface mb-1">Photos (multiple allowed)</label>
+                <input type="file" id="person-photos" required multiple accept="image/png,image/jpeg,image/webp" class="w-full border-2 border-on-surface rounded-lg p-2 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-bold file:bg-primary file:text-on-primary hover:file:bg-primary-container" />
+            </div>
+            
+            <button type="submit" id="submit-add-person-btn" class="modal-mode-btn" style="background: #003ec7; color: #fff; margin-top: 0.5rem;">
+                ➕ Upload & Train
+            </button>
+        </form>
+        <button onclick="closeAddPersonModal()" class="text-sm text-secondary underline mt-1 self-center cursor-pointer">Cancel</button>
+    </div>
+</div>
+
+<!-- Hidden file inputs: accept strictly typed so the OS file picker filters correctly -->
+<input type="file" id="photo-input" accept="image/png,image/jpeg,image/webp,image/gif,image/bmp" style="display:none" onchange="handlePhotoSelected(event)" />
+<input type="file" id="video-input" accept="video/mp4,video/webm,video/avi,video/mov,video/mkv" style="display:none" onchange="handleVideoSelected(event)" />
+
+<!-- ── Photo result overlay ───────────────────────────────────── -->
+<div id="photo-result" role="dialog" aria-modal="true">
+    <div class="result-box">
+        <h2 class="text-xl font-bold text-on-surface self-start">📸 Processed Photo</h2>
+        <img id="photo-result-img" src="" alt="Processed photo result" />
+        <button onclick="closePhotoResult()" class="px-6 py-2 border-2 border-on-surface rounded-full bg-error-container text-error font-bold shadow-[4px_4px_0_#1c1b1b] hover:-translate-y-1 transition-all">✕ Close</button>
+    </div>
+</div>
+
+<!-- ── Video result overlay ───────────────────────────────────── -->
+<div id="video-result" role="dialog" aria-modal="true">
+    <div class="result-box">
+        <h2 class="text-xl font-bold text-on-surface self-start">🎬 Processed Video Stream</h2>
+        <img id="video-result-img" src="" alt="Processed video stream" />
+        <button onclick="closeVideoResult()" class="px-6 py-2 border-2 border-on-surface rounded-full bg-error-container text-error font-bold shadow-[4px_4px_0_#1c1b1b] hover:-translate-y-1 transition-all">✕ Close</button>
+    </div>
+</div>
+<script>
+    // ── Mode switcher (webcam) ──────────────────────────────────
+    function setMode(mode) {
+        fetch('/set_mode', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ mode })
+        })
+        .then(r => r.json())
+        .then(d => console.log('Webcam mode →', d.mode))
+        .catch(e => console.error(e));
+    }
+
+    // ── Interactive Eyes ────────────────────────────────────────
+    document.addEventListener('mousemove', (e) => {
+        document.querySelectorAll('.eye').forEach(eye => {
+            const rect = eye.getBoundingClientRect();
+            const cx = rect.left + rect.width / 2;
+            const cy = rect.top  + rect.height / 2;
+            const angle    = Math.atan2(e.clientY - cy, e.clientX - cx);
+            const distance = Math.min(rect.width / 4, Math.hypot(e.clientX - cx, e.clientY - cy) / 6);
+            const pupil    = eye.querySelector('.pupil');
+            pupil.style.transform = `translate(${Math.cos(angle)*distance}px, ${Math.sin(angle)*distance}px)`;
+        });
+    });
+
+    // ── Fullscreen ──────────────────────────────────────────────
+    function toggleFullscreen() {
+        const v = document.getElementById('video_feed_img');
+        (v.requestFullscreen || v.webkitRequestFullscreen || v.msRequestFullscreen).call(v);
+    }
+
+    // ── Reset webcam feed ───────────────────────────────────────
+    function resetFeed() {
+        document.getElementById('hello-heading').innerText = 'Hello.';
+        setMode('raw');
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    //  Upload flow
+    // ═══════════════════════════════════════════════════════════
+    let _uploadType = null;   // 'photo' | 'video'
+    let _uploadMode = null;   // 'detection' | 'identification'
+
+    /** Called when user clicks "Process Photo" button — shows mode picker then opens image picker */
+    function startPhotoUpload() {
+        _uploadType = 'photo';
+        document.getElementById('modal-subtitle').textContent = 'What should be done with your photo?';
+        document.getElementById('upload-modal').classList.add('open');
+    }
+
+    /** Called when user clicks "Process Video" button — shows mode picker then opens video picker */
+    function startVideoUpload() {
+        _uploadType = 'video';
+        document.getElementById('modal-subtitle').textContent = 'What should be done with your video?';
+        document.getElementById('upload-modal').classList.add('open');
+    }
+
+    function closeUploadModal() {
+        document.getElementById('upload-modal').classList.remove('open');
+        _uploadType = null;
+    }
+
+    /** User picks Detection or Identification from modal — then the correct file picker opens */
+    function confirmUpload(mode) {
+        _uploadMode = mode;
+        const type = _uploadType;   // capture BEFORE closeUploadModal() nullifies it
+        closeUploadModal();
+        if (type === 'photo') {
+            // Reset so the same file can be re-selected
+            const inp = document.getElementById('photo-input');
+            inp.value = '';
+            inp.click();
+        } else if (type === 'video') {
+            const inp = document.getElementById('video-input');
+            inp.value = '';
+            inp.click();
+        }
+    }
+
+    // ── Photo handling ──────────────────────────────────────────
+    function handlePhotoSelected(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const fd = new FormData();
+        fd.append('photo', file);
+        fd.append('mode', _uploadMode);
+
+        fetch('/process_photo', { method: 'POST', body: fd })
+            .then(r => {
+                if (!r.ok) throw new Error('Server error ' + r.status);
+                return r.blob();
+            })
+            .then(blob => {
+                const url = URL.createObjectURL(blob);
+                const img = document.getElementById('photo-result-img');
+                img.src = url;
+                document.getElementById('photo-result').classList.add('open');
+            })
+            .catch(e => alert('Photo processing failed: ' + e.message));
+    }
+
+    function closePhotoResult() {
+        const panel = document.getElementById('photo-result');
+        panel.classList.remove('open');
+        const img = document.getElementById('photo-result-img');
+        URL.revokeObjectURL(img.src);
+        img.src = '';
+    }
+
+    // ── Video handling ──────────────────────────────────────────
+    function handleVideoSelected(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        event.target.value = '';
+
+        const fd = new FormData();
+        fd.append('video', file);
+        fd.append('mode', _uploadMode);
+
+        fetch('/upload_video', { method: 'POST', body: fd })
+            .then(r => r.json())
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                // Point the video result <img> at the MJPEG stream
+                const streamImg = document.getElementById('video-result-img');
+                streamImg.src = data.stream_url;
+                document.getElementById('video-result').classList.add('open');
+            })
+            .catch(e => alert('Video processing failed: ' + e.message));
+    }
+
+    function closeVideoResult() {
+        const panel = document.getElementById('video-result');
+        panel.classList.remove('open');
+        const img = document.getElementById('video-result-img');
+        img.src = '';   // stops the MJPEG stream immediately
+    }
+
+    // Close modals on backdrop click
+    document.getElementById('upload-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeUploadModal();
+    });
+    document.getElementById('photo-result').addEventListener('click', function(e) {
+        if (e.target === this) closePhotoResult();
+    });
+    document.getElementById('video-result').addEventListener('click', function(e) {
+        if (e.target === this) closeVideoResult();
+    });
+    document.getElementById('add-person-modal').addEventListener('click', function(e) {
+        if (e.target === this) closeAddPersonModal();
+    });
+
+    // ── Add Person Flow ─────────────────────────────────────────
+    function openAddPersonModal() {
+        document.getElementById('add-person-modal').style.display = 'flex';
+    }
+
+    function closeAddPersonModal() {
+        document.getElementById('add-person-modal').style.display = 'none';
+        document.getElementById('add-person-form').reset();
+    }
+
+    function submitAddPerson(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('person-name').value;
+        const files = document.getElementById('person-photos').files;
+        
+        if (!name || files.length === 0) return;
+        
+        const btn = document.getElementById('submit-add-person-btn');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '⏳ Processing...';
+        btn.disabled = true;
+        
+        const fd = new FormData();
+        fd.append('name', name);
+        for (let i = 0; i < files.length; i++) {
+            fd.append('photos', files[i]);
+        }
+        
+        fetch('/add_person', { method: 'POST', body: fd })
+            .then(r => r.json())
+            .then(data => {
+                if (data.error) throw new Error(data.error);
+                alert('Success: ' + data.message);
+                closeAddPersonModal();
+            })
+            .catch(e => alert('Failed to add person: ' + e.message))
+            .finally(() => {
+                btn.innerHTML = originalText;
+                btn.disabled = false;
+            });
+    }
+</script>
+</body></html>
