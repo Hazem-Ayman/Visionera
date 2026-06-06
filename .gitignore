@@ -1,0 +1,18 @@
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# User uploads & temporary files
+uploads/*
+!uploads/.gitkeep
+
+# IDE configs
+.idea/
+.vscode/
