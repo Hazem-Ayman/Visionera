@@ -26,7 +26,7 @@ A powerful Flask-based web application for real-time face detection and identifi
 
 ## 📸 Project Showcase
 
-![Visionera Main Screen](images/main.png)
+![Visionera Main Screen](Images/main.png)
 
 ---
 
@@ -93,8 +93,8 @@ Visionera/
 ├── app.py                          # Main Flask application
 ├── face_identifier.py              # Standalone face identification script
 ├── face_recognition.py             # Legacy face recognition script
-├── images/                         # Project images folder
-│   └── main.png                   # Project showcase image
+├── Images/                         # Project images folder
+│   └── main.png                    # Project showcase image
 ├── templates/                      # HTML templates
 ├── dataset/                        # Face images categorized by person
 ├── uploads/                        # Temporary video storage
